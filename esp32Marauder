@@ -1,0 +1,142 @@
+                                                                                                           esp32s2 marauder install win10 / 11
+open  admin CMD
+                                                                                              
+mkdir -p  "Your_Folder"
+
+in this                                                                                              
+                                                                                              
+download zip file in  https://github.com/UberGuidoZ/Flipper.git
+
+Unzip this
+
+cd Wifi_Devboard
+
+cd FZ_Marauder_Flasher
+
+connect your dev board in usb
+
+RESET MODE:
+
+hold_push "BOOT button" / push "RESET" button / release "BOOT" button 
+
+run Flash-v2.bat
+
+select option number 1.
+
+
+                                                                                                        esp32s2 marauder install Linux
+open  root terminal
+
+mkdir -p "Your_Folder"
+
+in this 
+
+git clone --recursive https://github.com/SkeletonMan03/FZEasyMarauderFlash.git
+
+cd FZEasyMarauderFlash
+
+run pip3 install -r requirements.txt
+
+connect your dev board in usb
+
+RESET MODE:
+
+hold_push "BOOT" button / push "RESET" button / release "BOOT button" 
+
+run python3 EasyInstall.py
+ 
+select option number 1 
+
+
+
+                                                                                                      
+                                                                                          python script by Justcallmekoko (BLUE Pill) install linux only
+                                                                                                             
+                                                                                                             
+Open root terminal
+
+mkdir -p "Esp32Marauder"
+
+in this folder
+
+git clone --recursive https://github.com/justcallmekoko/ESP32Marauder.git
+
+Download Arduino_IDE and in this folder run ./install.sh
+
+Run Arduino_IDE
+
+open MarauderOTA.ino  in Arduino IDE
+
+file -> préférences - > Additional boards manager : URLs https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json
+
+copy the code at https://raw.githubusercontent.com/justcallmekoko/ESP32Marauder/master/MarauderOTA/MarauderOTA.ino
+
+replace this code in the IDE interface
+
+Tools --> board --> board manager
+
+Search and install:  Arduino AVR Board  / esp32 by espressif V 2.0.7
+
+Tools --> select your dev board folowed by /dev/ttyACM0
+
+Tools --> Board --> esp32 ---> ESP32S2 Dev Module
+
+USB CDC on boot: "enable"
+CPU frequency: 240MHZ  (WI FI 2.4 Ghz)
+Flash Mode: QIO
+Flash Size: 4MB
+Partition Scheme: Minimal SPIFFS (1.9MB APP with OTA)
+Upload Speed: 921600
+Upload Mode: UART0
+
+run Upload Button
+
+Push "RESET" button after Compilation and flash
+
+
+Download this file  "esp32_marauder_v0_10_2_20230315_flipper.bin"   at   https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.10.2
+or
+Download this file  "esp32_marauder_v0_10_3_20230414_flipper.bin"   at   https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.10.3                // for the last version
+
+SSID MarauderOTA will appear
+
+connect at SSID
+
+Network ESSID: MarauderOTA
+Network Password: justcallmekoko
+
+Open your Web Browser and Navigate to http://192.168.4.1
+Username: admin
+Password: admin
+
+Select the file downloaded just before   "esp32_marauder_v0_10_2_20230315_flipper.bin"
+
+Click Update Button
+
+installation completed
+
+Connect the module at Putty serial /dev/ttyACM0  Baud rate 115200 (speed)
+On Flipper Zero Use GPIO --> USB-UART Bridge --> Config --> Baudrate 115200
+Run "reboot" on putty
+
+Enjoy !                          
+
+
+
+
+
+
+Wormus
+
+
+
+
+
+
+
+
+
+                                                                                                             
+                                                                                                             
+                                                                                                             
+                                  
